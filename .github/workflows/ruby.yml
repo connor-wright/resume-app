@@ -38,7 +38,7 @@ jobs:
         bin/rails db:setup
         
     - name: Run Tests
-      evn:
+      env:
         PGHOST: localhost
         PGUSER: postgres
         RAILS_ENV: test
