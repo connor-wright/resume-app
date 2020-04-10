@@ -10,19 +10,37 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:11.5
+        ports: ["5432:5432"]
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    - uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: install
-    - name: Build and test with Rake
+        
+    - name: Install postgresSql 11 client
       run: |
-        sudo apt-get install libsqlite3-dev
+        sudo apt-get -yqq install libpq-dev
+        
+    - name: Build App
+      env: 
+        PGHOST: localhost
+        PGUSER: postgres
+        RAILS_ENV: test
+      run: |
         ruby -v
         gem install bundler
         bundle install --jobs 4 --retry 3
-        bundle exec rake test
+        bin/rails db:setup
+        
+    - name: Run Tests
+        env:
+          PGHOST: localhost
+          PGUSER: postgres
+          RAILS_ENV: test
+        run: |
+          bundle exec rake test
