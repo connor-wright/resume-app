@@ -16,6 +16,9 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
+    - uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: install
     - name: Build and test with Rake
       run: |
         sudo apt-get install libsqlite3-dev
