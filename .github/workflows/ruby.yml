@@ -17,7 +17,6 @@ jobs:
         sudo gem install rails -v 6.0.2
     - name: Build and test with Rake
       run: |
-        gem install rails -v 6.0.2
         ruby -v
         gem install bundler
         bundle install --jobs 4 --retry 3
