@@ -3,11 +3,11 @@
 
 
 /*colors*/
-$color-blue: #0000FF
+$color-header:   #3377ff;
+$color-black:    #000000;
 
 /* universal */
 body {
-    padding-top: 60px;
 }
 
 section {
@@ -59,17 +59,31 @@ p {
     float: left;
     margin-right: 10px;
     font-size: 1.7em;
-    color: #fff;
+    //color: #fff;
     text-transform: uppercase;
     letter-spacing: -1px;
     padding-top: 9px;
     font-weight: bold;
 }
 #logo:hover {
-    color: #fff;
+    color: $color-black;
     text-decoration: none;
 }
 
-.container{
-    float: left;
+nav{
+    .container{
+        display: flex;
+        //justify-content: center;
+        align-items: center; 
+    }    
+    
+    .left{
+        
+        float: left;
+    }
+    
+    .right{
+        float: right;
+    }
+
 }

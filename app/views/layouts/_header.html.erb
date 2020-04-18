@@ -1,6 +1,10 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-        <%= link_to "Connor Wright", root_path, id: "logo" %>
-        <%= link_to "Github", "https://github.com/connor-wright", id: "logo" %>
-    </div>
-</header>
+<nav class="navbar fixed-top navbar-light" style="background-color: #3377ff">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-0 left">
+                <%= link_to "Connor Wright", root_path, class:"navbar-brand ml-0 left", style:"color: black"%>
+            </ul>
+            <ul class="navbar-nav mr-1 right">
+                <%= link_to image_tag("GitHub-Mark-32px.png"), "https://github.com/connor-wright", class:"nav-link mr-1"%>
+            </ul>    
+        </div>
+</nav>
