@@ -34,6 +34,7 @@ jobs:
       run: |
         ruby -v
         gem install bundler
+        yarn install
         bundle install --jobs 4 --retry 3
         bin/rails db:setup
         
