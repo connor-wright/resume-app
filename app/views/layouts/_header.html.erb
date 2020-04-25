@@ -1,10 +1,11 @@
-<nav class="navbar fixed-top navbar-light" style="background-color: #3377ff">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-0 left">
-                <%= link_to "Connor Wright", root_path, class:"navbar-brand ml-0 left", style:"color: black"%>
-            </ul>
-            <ul class="navbar-nav mr-1 right">
-                <%= link_to image_tag("GitHub-Mark-32px.png"), "https://github.com/connor-wright", class:"nav-link mr-1"%>
-            </ul>    
-        </div>
+<nav class="navbar fixed-top navbar-light navbar-expand flex-column flex-md-row bd-navbar" style="background-color: #3377ff">
+                <%= link_to "Connor Wright", root_path, class:"navbar-brand", style:"color: black"%>
+                <%= link_to "About Me",      "#",       class:"navbar-brand", style:"color: black"%>
+                <%= link_to "Experience",    "#",       class:"navbar-brand", style:"color: black"%>
+                <%= link_to "Skills",        "#",       class:"navbar-brand", style:"color: black"%>
+                <%= link_to "Projects",      "#",       class:"navbar-brand", style:"color: black"%>
+                <div class="navbar-nav right align-middle">
+                       <%= link_to "Source Code", "https://github.com/connor-wright/resume-app", class:"nav-link", style: "color: black" %>
+                       <%= link_to image_tag("GitHub-Mark-32px.png"), "https://github.com/connor-wright", class:"nav-link", style: "color: black"%> 
+                </div>
 </nav>
