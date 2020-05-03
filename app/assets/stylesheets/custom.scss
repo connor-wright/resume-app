@@ -1,5 +1,5 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+//@import "bootstrap-sprockets";
+//@import "bootstrap";
 
 /*colors*/
 $color-header:   #3377ff;
@@ -10,6 +10,10 @@ body {
     .container-center{
         width: 85%;
         display: inline-block;
+        
+        img {
+            //border-radius: 50%;
+        }
     }
     .container-main
     {
