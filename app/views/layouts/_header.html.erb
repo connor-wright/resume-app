@@ -1,11 +1,42 @@
-<nav class="navbar fixed-top navbar-light navbar-expand flex-column flex-md-row bd-navbar" style="background-color: #3377ff">
-                <%= link_to "Connor Wright", root_path, class:"navbar-brand", style:"color: black"%>
-                <%= link_to "About Me",      "#",       class:"navbar-brand", style:"color: black"%>
-                <%= link_to "Experience",    "#",       class:"navbar-brand", style:"color: black"%>
-                <%= link_to "Skills",        "#",       class:"navbar-brand", style:"color: black"%>
-                <%= link_to "Projects",      "#",       class:"navbar-brand", style:"color: black"%>
-                <div class="navbar-nav right align-middle">
-                       <%= link_to "Source Code", "https://github.com/connor-wright/resume-app", class:"nav-link", style: "color: black" %>
-                       <%= link_to image_tag("GitHub-Mark-32px.png"), "https://github.com/connor-wright", class:"nav-link", style: "color: black"%> 
-                </div>
+<nav class="navbar fixed-top navbar-light navbar-expand-lg bd-navbar" style="background-color: #3377ff">
+    <%= link_to "Connor Wright", root_path, class:"navbar-brand mb-0 h1", style:"color: black"%>
+    <div class="navbar-header">
+        <button type="button" class="btn btn-primary navbar-toggle collapsed d-none"
+            data-toggle="collapse"
+            aria-controls="navbar-items"
+            data-target="#navbar-items"
+            aria-expanded="false"
+            id="burger-nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <ul class="nav navbar-nav collapse navbar-collapse" id="navbar-items">
+        <ul class="nav navbar-nav mr-auto" id="navbar-group-1">
+            <li class="nav-item d-flex justify-content-center">
+               <%= link_to "About Me",      "#",       class:"nav-link", style:"color: black"%>
+            </li> 
+            <li class="nav-item d-flex justify-content-center">
+               <%= link_to "Experience",    "#",       class:"nav-link", style:"color: black"%>
+            </li> 
+            <li class="nav-item d-flex justify-content-center">
+               <%= link_to "Skills",        "#",       class:"nav-link", style:"color: black"%>
+            </li> 
+            <li class="nav-item d-flex justify-content-center">
+               <%= link_to "Projects",      "#",       class:"nav-link", style:"color: black"%>
+            </li> 
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item d-flex justify-content-center align-items-center">
+                <%= link_to image_tag("sourceCode.png", :size => '32x32'), 
+                "https://github.com/connor-wright/resume-app", 
+                class:"nav-link", style:"color: black" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to image_tag("GitHub-Mark-32px.png"), 
+                            "https://github.com/connor-wright", 
+                            class:"nav-link d-flex justify-content-center", 
+                            style:"color: black"%> 
+            </li>
+        </ul>
+    </ul>
 </nav>
