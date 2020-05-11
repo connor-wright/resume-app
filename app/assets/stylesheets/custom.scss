@@ -12,13 +12,16 @@ $color-black:    #000000;
 }
 
 body {
-    //padding-top: 70px;
+    //height: 100vh;
+    
     .container-center{
+        //height: 100vh;
         width: 85%;
         display: inline-block;
     }
     .container-main
     {
+        height: 100vh;
         text-align: center;
     }
 }

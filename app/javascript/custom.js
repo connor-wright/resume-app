@@ -37,17 +37,17 @@ function displayBurgerNavOnResize()
  
 function adjustHeaderBufferOnBurgerNavClick()
 {
-    var items = $('#navbar-items');
-    var $body = $('body');
+    var $items = $('#navbar-items');
+    var $centerContainer = $('.container-center');
     
-    items.on('shown.bs.collapse', function() {
-        $body.removeClass('padding-top-70px');
-        $body.addClass('padding-top-315px');
+    $items.on('shown.bs.collapse', function() {
+        $centerContainer.removeClass('padding-top-70px');
+        $centerContainer.addClass('padding-top-315px');
     });
     
-    items.on('hidden.bs.collapse', function() 
+    $items.on('hidden.bs.collapse', function() 
     {
-        $body.removeClass('padding-top-315px');
-        $body.addClass('padding-top-70px');
+        $centerContainer.removeClass('padding-top-315px');
+        $centerContainer.addClass('padding-top-70px');
     });
 }
