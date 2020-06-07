@@ -1,6 +1,24 @@
 <%= generate_title("Projects", "projects").html_safe() %>
-<p class="text-justify mx-5">
-    If you look to the top right hand of the webpage you can see the links to my Github and the source
-    code for this website. Feel free to browse them but Ill breifly give a summary of each project here
-    and direct links.
-</p>
+<div class= "mx-5">
+    <p class="text-justify ml-1">
+        Here is a sample of projects I have worked on. Other projects are avalable on my github.
+        The ones I have listed below are good examples of my work. 
+    </p>
+    
+    <h2 class="text-justify ml-1"> 
+        <%= link_to('Resume-App', 
+                    'https://github.com/connor-wright/resume-app')
+        %>
+    </h2>
+    <p class="text-justify ml-3">
+        The goal of this project was to have a platform for recruters to easily acess.
+        They can see my skills and abilities in a real world project and be able to contact me.
+        This is a ruby on rails application hosted on heroku with a CI/CD pipeline on github. 
+        The application is static but it does showcase my abilities with bootstrap html and css
+        as well as some javascript.
+    </p>
+    
+    <h2 class="text-justify ml-1">
+        TODO NEED TO FIGURE OUT IF I SHOULD INCLUDE SAMPLE APP SOURCE CODE
+    </h2>
+</div>
