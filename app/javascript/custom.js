@@ -1,9 +1,23 @@
 /* global $*/
 import 'bootstrap';
+
 $(document).ready(function(){
     displayBurgerNavOnResize();
     adjustHeaderBufferOnBurgerNavClick();
+    
+    $(".anchor").click(function(){
+       alert("Anchor was clicked"); 
+       displayBurgerNavOnResize();
+       adjustHeaderBufferOnBurgerNavClick();
+    });
 });
+
+$(".anchor").click(function(){
+       alert("Anchor was clicked"); 
+       displayBurgerNavOnResize();
+       adjustHeaderBufferOnBurgerNavClick();
+    });
+
 
 function displayBurgerNavOnResize()
 {
@@ -15,7 +29,7 @@ function displayBurgerNavOnResize()
     //function to perform actions when window gets resized
     function checkWidth() {
         var windowsize = $window.width();
-        if(windowsize < 800){
+        if(windowsize < 1000){
             $navitem1.removeClass('mr-auto');
             $burgernav.removeClass('d-none');
         }
@@ -27,12 +41,13 @@ function displayBurgerNavOnResize()
         
         //always collapse navitems when a resize happens
         $items.collapse('hide');
+        alert("checkWidth was called");
     }
     
     //execute on load
     checkWidth();
     //Bind to event
-    $(window).resize(checkWidth);
+    $window.resize(checkWidth);
 }
  
 function adjustHeaderBufferOnBurgerNavClick()
@@ -51,3 +66,5 @@ function adjustHeaderBufferOnBurgerNavClick()
         $centerContainer.addClass('padding-top-70px');
     });
 }
+
+
