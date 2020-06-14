@@ -1,23 +1,31 @@
-/* global $*/
-import 'bootstrap';
+/* global $ */
+//import "jQuery";
+
 
 $(document).ready(function(){
     displayBurgerNavOnResize();
     adjustHeaderBufferOnBurgerNavClick();
-    
-    $(".anchor").click(function(){
-       alert("Anchor was clicked"); 
-       displayBurgerNavOnResize();
-       adjustHeaderBufferOnBurgerNavClick();
-    });
+    //bindAnchorScroll();
 });
 
-$(".anchor").click(function(){
-       alert("Anchor was clicked"); 
-       displayBurgerNavOnResize();
-       adjustHeaderBufferOnBurgerNavClick();
-    });
-
+//taken from here there seeems to be an issue with turbolinks realoading the 
+//page https://github.com/turbolinks/turbolinks/issues/75#issuecomment-445325162
+document.addEventListener('turbolinks:click', function (event) {
+  var anchorElement = event.target
+  var isSamePageAnchor = (
+    anchorElement.hash &&
+    anchorElement.origin === window.location.origin &&
+    anchorElement.pathname === window.location.pathname
+  )
+  
+  if (isSamePageAnchor) {
+    Turbolinks.controller.pushHistoryWithLocationAndRestorationIdentifier(
+      event.data.url,
+      Turbolinks.uuid()
+    )
+    event.preventDefault()
+  }
+});
 
 function displayBurgerNavOnResize()
 {
@@ -38,10 +46,8 @@ function displayBurgerNavOnResize()
             $navitem1.addClass('mr-auto');
             $burgernav.addClass('d-none');
         }
-        
         //always collapse navitems when a resize happens
         $items.collapse('hide');
-        alert("checkWidth was called");
     }
     
     //execute on load
