@@ -12,6 +12,10 @@ $color-black:    #000000;
     padding-top: 315px;
 }
 
+.padding-top-20px{
+    padding-top: 20px;
+}
+
 body {
     //height: 100vh;
     
@@ -43,6 +47,23 @@ textarea {
     margin-bottom: 10px;
 }
 
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 70px;
+}
+
+/*skill grid*/
+.container{
+    h2{
+        color: #000000;
+        //margin-top: 10px !important;
+        //margin-bottom: 10px !important;
+    }
+    .axis{
+        background: #BEBEBE;
+    }
+}
+
 /* typeography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -68,4 +89,11 @@ h2 {
 p {
     font-size: 1.1em;
     line-height: 1.7em;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
