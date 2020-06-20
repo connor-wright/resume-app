@@ -10,19 +10,19 @@ $(document).ready(function(){
 //taken from here there seeems to be an issue with turbolinks realoading the 
 //page https://github.com/turbolinks/turbolinks/issues/75#issuecomment-445325162
 document.addEventListener('turbolinks:click', function (event) {
-  var anchorElement = event.target
+  var anchorElement = event.target;
   var isSamePageAnchor = (
     anchorElement.hash &&
     anchorElement.origin === window.location.origin &&
     anchorElement.pathname === window.location.pathname
-  )
+  );
   
   if (isSamePageAnchor) {
     Turbolinks.controller.pushHistoryWithLocationAndRestorationIdentifier(
       event.data.url,
       Turbolinks.uuid()
-    )
-    event.preventDefault()
+    );
+    event.preventDefault();
   }
 });
 
@@ -84,34 +84,39 @@ function onBurgerNavClick()
     });
 }
 
+
 function onAnchorLinkClick()
 {
     var $items = $('#navbar-items');
+    var preventDefault = true;
+    var $anchorLink = null;
+    
+    function clickAnchorAfterColapse()
+    {
+        //refire after nav has colapsed
+        if($anchorLink)
+        {
+            $anchorLink[0].click();
+            preventDefault = true;
+            $anchorLink = null;
+        }
+    }
+    
+    $items.on('hidden.bs.collapse', clickAnchorAfterColapse);
+    
     $(".anchor").click(function(event)
     { 
-        //infinite loop
-        if(!(event.data && event.data.collapsed === true))
+        if(belowWindowThreashold() && $items.is(':visible'))
         {
-            event.preventDefault();
-            console.info(event);
-            $(this).trigger("click", {collapsed: true});
-        }
-        
-        
-        /*if(belowWindowThreashold() && $items.is(':visible'))
-        {
-            if(!(event.data && event.data.collapsed === true))
+            if(preventDefault)
             {
-                var $anchor = $(this);
                 event.preventDefault();
-                $items.on('hidden.bs.collapse', function() {
-                    console.info($anchor);
-                    $anchor.trigger("click", {collapsed: true});
-                });
+                $anchorLink = $(this);
+                preventDefault = false;
                 $items.collapse('hide');
             }
+            
         }
-        console.info("triggered");*/
     });
 }
 
