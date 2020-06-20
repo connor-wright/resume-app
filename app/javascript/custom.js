@@ -84,22 +84,34 @@ function onBurgerNavClick()
     });
 }
 
-function triggerAnchorClick(id)
-{
-    
-}
-
 function onAnchorLinkClick()
 {
     var $items = $('#navbar-items');
     $(".anchor").click(function(event)
     { 
-        if(belowWindowThreashold()){
+        //infinite loop
+        if(!(event.data && event.data.collapsed === true))
+        {
             event.preventDefault();
-            $items.collapse('hide');
-            event.data.collapsed = true;
-            alert(event.data.collapsed)
+            console.info(event);
+            $(this).trigger("click", {collapsed: true});
         }
+        
+        
+        /*if(belowWindowThreashold() && $items.is(':visible'))
+        {
+            if(!(event.data && event.data.collapsed === true))
+            {
+                var $anchor = $(this);
+                event.preventDefault();
+                $items.on('hidden.bs.collapse', function() {
+                    console.info($anchor);
+                    $anchor.trigger("click", {collapsed: true});
+                });
+                $items.collapse('hide');
+            }
+        }
+        console.info("triggered");*/
     });
 }
 
