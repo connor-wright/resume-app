@@ -1,11 +1,10 @@
 /* global $ */
-//import "jQuery";
-
 
 $(document).ready(function(){
-    displayBurgerNavOnResize();
-    adjustHeaderBufferOnBurgerNavClick();
-    //bindAnchorScroll();
+    //Hook up event handlers
+    onResize();
+    onBurgerNavClick();
+    onAnchorLinkClick();
 });
 
 //taken from here there seeems to be an issue with turbolinks realoading the 
@@ -27,24 +26,36 @@ document.addEventListener('turbolinks:click', function (event) {
   }
 });
 
-function displayBurgerNavOnResize()
+function belowWindowThreashold()
+{
+    if($(window).width() < 1000) {return true;}
+    return false;
+}
+
+function onResize()
 {
     var $window     = $(window);
     var $burgernav  = $('#burger-nav');
     var $navitem1   = $('#navbar-group-1');
     var $items      = $('#navbar-items');
+    var $centerContainer = $('.container-center');
     
     //function to perform actions when window gets resized
     function checkWidth() {
         var windowsize = $window.width();
-        if(windowsize < 1000){
+        if(belowWindowThreashold()){
             $navitem1.removeClass('mr-auto');
             $burgernav.removeClass('d-none');
+            //$('html').css('scroll-padding', '20px')
+            //$centerContainer
+              //  .removeClass('padding-top-70px').addClass('padding-top-20px');
+            //$('anchor').removeClass('anchor').addClass('anchor-mobile');
         }
         else{
-            
             $navitem1.addClass('mr-auto');
             $burgernav.addClass('d-none');
+            //$('anchor-mobile')
+            //    .removeClass('anchor-mobile').addClass('anchor');
         }
         //always collapse navitems when a resize happens
         $items.collapse('hide');
@@ -52,11 +63,11 @@ function displayBurgerNavOnResize()
     
     //execute on load
     checkWidth();
-    //Bind to event
+    //Bind to window reasize
     $window.resize(checkWidth);
 }
  
-function adjustHeaderBufferOnBurgerNavClick()
+function onBurgerNavClick()
 {
     var $items = $('#navbar-items');
     var $centerContainer = $('.container-center');
@@ -73,4 +84,22 @@ function adjustHeaderBufferOnBurgerNavClick()
     });
 }
 
+function triggerAnchorClick(id)
+{
+    
+}
+
+function onAnchorLinkClick()
+{
+    var $items = $('#navbar-items');
+    $(".anchor").click(function(event)
+    { 
+        if(belowWindowThreashold()){
+            event.preventDefault();
+            $items.collapse('hide');
+            event.data.collapsed = true;
+            alert(event.data.collapsed)
+        }
+    });
+}
 
