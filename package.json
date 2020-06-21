@@ -9,6 +9,7 @@
     "bootstrap": "^4.4.1",
     "exports-loader": "^0.7.0",
     "jquery": "^3.5.0",
+    "popper": "^1.0.1",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0",
     "websocket-extensions": "^0.1.4"
