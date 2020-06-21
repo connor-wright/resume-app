@@ -7,10 +7,6 @@ $(document).ready(function(){
     onAnchorLinkClick();
 });
 
-
-$("#modal-window").find(".modal-content").html("<%= j (render 'layouts/mainpage/about_me') %>");
-$("#modal-window").modal();
-
 //taken from here there seeems to be an issue with turbolinks realoading the 
 //page https://github.com/turbolinks/turbolinks/issues/75#issuecomment-445325162
 document.addEventListener('turbolinks:click', function (event) {

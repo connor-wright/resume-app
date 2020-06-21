@@ -11,7 +11,6 @@ require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
 require("bootstrap");
-require("popper");
 import 'bootstrap';
 import "../stylesheets/application";
 require("custom");
