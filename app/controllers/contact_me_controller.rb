@@ -1,8 +1,8 @@
 class ContactMeController < ApplicationController
-  def index 
+  def contact_me 
     respond_to do |format|
-      format.html
       format.js
+      format.html
     end
   end
   
