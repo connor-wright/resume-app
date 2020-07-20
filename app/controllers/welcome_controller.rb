@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+    #note probably dont need this
     def new
         respond_to do |format|
             format.html

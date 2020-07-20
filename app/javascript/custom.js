@@ -5,6 +5,9 @@ $(document).ready(function(){
     onResize();
     onBurgerNavClick();
     onAnchorLinkClick();
+    
+    var clipboard = new ClipboardJS('.email-clipboard-btn');
+    console.log(clipboard);
 });
 
 //taken from here there seeems to be an issue with turbolinks realoading the 
