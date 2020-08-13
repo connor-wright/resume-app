@@ -1,3 +1,9 @@
 <footer class="footer ">
-    This is a footer
+    <%= link_to 'Contact Me!', '/contact_me',  
+                {
+                    :remote => true, 
+                    'data-toggle' =>  "modal", 
+                    'data-target' => '#modal-window', 
+                    class: 'btn btn-primary'
+                }  %>
 </footer>
