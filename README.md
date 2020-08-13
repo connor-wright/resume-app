@@ -1,26 +1,7 @@
-# README
+# Resume App
 
-![Ruby](https://github.com/connor-wright/resume-app/workflows/Ruby/badge.svg?branch=master)
+https://peaceful-lake-49231.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a very simple website used to showcase me and some of my abilities. 
+The application also demonstrates
+my skills in AWS, Rails, Github Actions and Heroku.

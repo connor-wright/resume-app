@@ -5,11 +5,4 @@ class ContactMeController < ApplicationController
       format.html
     end
   end
-  
-  #def send_toME
-    #respond_to do |format|
-    #  format.html
-    #  format.js
-    #end
-  #end
 end

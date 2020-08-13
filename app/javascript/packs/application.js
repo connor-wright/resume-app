@@ -12,10 +12,7 @@ require("channels");
 require("bootstrap");
 import 'bootstrap';
 import '../stylesheets/application';
-import ''
-//= require dist/clipboard.min.js;
 //= require_tree.
-require("custom_clipboard");
 require("custom");
 
 // Uncomment to copy all static images under ../images to the output folder and reference
